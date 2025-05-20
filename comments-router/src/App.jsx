@@ -1,9 +1,10 @@
-import CommentForm from "./components/CommentForm";
 import Footer from "./components/Footer";
 import About from "./views/About";
 import CommentList from "./views/CommentList";
 import Login from "./views/Login";
 import UserList from "./views/UserList";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 
 const App = () => {
   const users = [
@@ -38,15 +39,16 @@ const App = () => {
   ];
 
   return (
-    <div>
-      <h1>Comments App</h1>
-      <CommentList comments={comments} />
-      <CommentForm />
-      <UserList users={users} />
-      <About />
-      <Login />
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<CommentList comments={comments} />} />
+        <Route path="/users" element={<UserList users={users} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <Footer />
-    </div>
+    </Router>
   );
 };
 
