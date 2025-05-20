@@ -1,11 +1,14 @@
 import User from "../components/User";
+import { Link } from "react-router-dom";
 
 const UserList = ({ users }) => {
   return (
     <div>
       <h2>Users</h2>
       {users.map((u) => (
-        <User user={u} key={u.id} />
+        <Link to={"/users/" + u.id} key={u.id}>
+          <User user={u} />
+        </Link>
       ))}
     </div>
   );

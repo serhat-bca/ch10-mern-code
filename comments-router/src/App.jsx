@@ -5,6 +5,7 @@ import Login from "./views/Login";
 import UserList from "./views/UserList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import UserDetails from "./views/UserDetails";
 
 const App = () => {
   const users = [
@@ -46,6 +47,7 @@ const App = () => {
         <Route path="/users" element={<UserList users={users} />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/users/:id" element={<UserDetails users={users} />} />
       </Routes>
       <Footer />
     </Router>
