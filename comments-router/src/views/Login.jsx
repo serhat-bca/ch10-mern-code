@@ -1,10 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
+
+  const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("username: ", e.target.username.value);
     console.log("password: ", e.target.password.value);
     e.target.username.value = "";
     e.target.password.value = "";
+    navigate("/");
   };
 
   return (
