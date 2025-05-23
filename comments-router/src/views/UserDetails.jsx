@@ -7,6 +7,7 @@ const UserDetails = ({ users }) => {
   if (!user) return <p>No user Found</p>;
   return (
     <div>
+      <h2>User Details</h2>
       <div>Name: {user.name}</div>
       <div>Username: {user.username}</div>
       <div>Number of Comments: {user.numberOfComments}</div>
